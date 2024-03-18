@@ -1,30 +1,36 @@
+import { ACTION_TYPES } from "./actionTypes/actionTypes";
+
+// Intital state for pokemon fetch
+
 export const INITIAL_STATE = {
   loading: false,
   error: false,
-  post: {},
+  pokemon: {},
   curErrorMessage: "",
 };
 
+// Reducer checks for current action type and updates initial state
 export const pokemonReducer = (state, action) => {
   switch (action.type) {
-    case "FETCH_START":
+    case ACTION_TYPES.FETCH_START:
       return {
         loading: true,
         error: false,
-        post: {},
+        pokemon: {},
         curErrorMessage: "",
       };
-    case "FETCH_SUCCESS":
+    case ACTION_TYPES.FETCH_SUCCESS:
       return {
         ...state,
         loading: false,
-        post: action.payload,
+        // post is updated with pokemon data by recieving data in payload
+        pokemon: action.payload,
       };
-    case "FETCH_ERROR":
+    case ACTION_TYPES.FETCH_ERROR:
       return {
         loading: false,
         error: true,
-        post: {},
+        pokemon: {},
         curErrorMessage: action.payload,
       };
     default:

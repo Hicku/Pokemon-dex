@@ -1,20 +1,36 @@
-import { useReducer } from "react";
+import { useReducer, createContext, useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import {
   pokemonReducer,
   INITIAL_STATE,
 } from "./reducerFunctions/pokemonReducer";
+import Navabar from "./components/Navabar";
+import Button from "./components/Button";
+import Pokemon from "./components/Pokemon";
+import Homepage from "./Pages/Homepage";
+import Dex from "./Pages/Dex";
+import Login from "./Pages/Login";
+import Signup from "./Pages/Signup";
+
+export const AppContext = createContext();
 
 function App() {
+  //reducer - updates state for handelFetch status
   const [state, dispatch] = useReducer(pokemonReducer, INITIAL_STATE);
+  // state for storing caught pokemon data
+  const [pokemonData, setPokemonData] = useState([]);
 
+  // Handle click for Pokemon search and call handleFetch()
   const handleClick = (e) => {
     e.preventDefault();
     handleFetch();
   };
 
+  // fetch data function
   const handleFetch = async () => {
     try {
+      // dispatch calls action type to update initial state in pokemonReducer
       dispatch({ type: "FETCH_START" });
       const res = await fetch("https://pokeapi.co/api/v2/pokemon/ditto");
 
@@ -29,8 +45,10 @@ function App() {
       }
 
       const data = await res.json();
+      // dispatch calls action type to update initial state with payload(data)
       dispatch({ type: "FETCH_SUCCESS", payload: data });
       console.log(data);
+      setPokemonData([...pokemonData, data]);
     } catch (err) {
       dispatch({ type: "FETCH_ERROR", payload: err.message });
       console.error("Something went went wrong:", err.message);
@@ -38,12 +56,21 @@ function App() {
   };
 
   return (
-    <div className="App">
-      {state.error && <p>{state.curErrorMessage}</p>}
-      <button onClick={handleClick}>
-        {state.loading ? "waiting..." : "Catch Pokemon"}
-      </button>
-    </div>
+    <Router>
+      <AppContext.Provider value={{ pokemonData }}>
+        <header>
+          <Navabar />
+        </header>
+        <main className="App">
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/dex" element={<Dex />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+        </main>
+      </AppContext.Provider>
+    </Router>
   );
 }
 
