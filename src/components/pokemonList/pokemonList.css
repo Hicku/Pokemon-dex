@@ -1,0 +1,23 @@
+.pokemon-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  background-color: #ff0000;
+}
+
+.list-section {
+  width: 700px;
+  height: 400px;
+  clip-path: polygon(100% 0, 100% 100%, 20% 100%, 0% 80%, 0 0);
+  background-color: #fbf7f5;
+  border-radius: 8px;
+}
+
+.list-header {
+  text-align: center;
+  padding: 10px;
+  font-size: larger;
+  color: bisque;
+}
