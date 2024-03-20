@@ -7,7 +7,6 @@ import {
 } from "./reducerFunctions/pokemonReducer";
 import Navabar from "./components/navbar/Navabar";
 import Button from "./components/Button";
-import Pokemon from "./components/Pokemon";
 import Homepage from "./Pages/Homepage";
 import Dex from "./Pages/dex/Dex";
 import Login from "./Pages/Login";

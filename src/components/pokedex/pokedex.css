@@ -1,0 +1,132 @@
+.pokemon-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  background-color: #f62d14;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.list-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  height: 400px;
+  clip-path: polygon(100% 0, 100% 100%, 10% 100%, 0% 90%, 0 0);
+  background-color: #fbf7f5;
+  border-radius: 10px;
+  border: 3px solid #002147;
+  flex-shrink: 1;
+}
+
+@media (max-width: 1024px) {
+  .list-section {
+    width: 500px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 780px) {
+  .list-section {
+    width: 400px;
+    height: 250px;
+  }
+}
+
+.list-header {
+  text-align: center;
+  padding: 10px;
+  font-size: larger;
+  color: bisque;
+}
+
+.screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 28px;
+  border-radius: 10px;
+  border: 3px solid #002147;
+  background-color: #99ffff;
+  width: 500px;
+  height: 250px;
+}
+
+@media (max-width: 1024px) {
+  .screen {
+    width: 375px;
+    height: 175px;
+  }
+}
+
+@media (max-width: 780px) {
+  .screen {
+    width: 275px;
+    height: 150px;
+  }
+}
+
+.light-and-lines-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 72%;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.lines-container {
+  margin-right: 15px;
+}
+
+.red-light-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+  padding-top: 7px;
+}
+
+.red-light-on {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #002147;
+  background-color: red;
+  box-shadow: 0 0 25px 2px red;
+}
+
+.red-light-off {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #002147;
+  background-color: #002147;
+}
+
+.red-light-on:hover,
+.red-light-off {
+  cursor: pointer;
+}
+
+.on-off {
+  font-size: xx-small;
+  text-align: center;
+}
+
+.lines {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.line {
+  border-top: 2px solid #002147;
+  width: 30px;
+}

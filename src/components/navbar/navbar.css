@@ -1,12 +1,13 @@
 .nav-container {
   display: flex;
-  background-color: gray;
+  background-color: #3b4cca;
   height: 50px;
   align-items: center;
 }
 
 nav h1 {
   margin: auto;
+  color: #ffde00;
 }
 
 .links {
@@ -17,9 +18,10 @@ nav h1 {
 
 .nav-link {
   text-decoration: none;
-  color: antiquewhite;
+  color: #ffde00;
 }
 
 .logo {
   margin-left: 20px;
+  color: #ffde00;
 }

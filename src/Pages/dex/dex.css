@@ -1,6 +1,6 @@
 .list-component-container {
   display: flex;
   flex-direction: column;
-  background-color: aqua;
+  background-color: #b3a125;
   flex-grow: 1;
 }

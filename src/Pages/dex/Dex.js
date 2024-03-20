@@ -1,11 +1,11 @@
 import React from "react";
-import PokemonList from "../../components/pokemonList/PokemonList";
+import Pokedex from "../../components/pokedex/Pokedex";
 import "./dex.css";
 
 export default function Dex() {
   return (
     <div className="list-component-container">
-      <PokemonList />
+      <Pokedex />
     </div>
   );
 }
