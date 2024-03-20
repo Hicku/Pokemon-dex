@@ -19,7 +19,22 @@
   padding: 4px;
   background-color: #fbf7f5;
   width: 150px;
+  height: 170px;
   margin-left: 25px;
+  overflow-y: auto;
+}
+
+.pokemon-list-component::-webkit-scrollbar {
+  background-color: #fbf7f5;
+  width: 5px;
+}
+
+.pokemon-list-component::-webkit-scrollbar-thumb {
+  background-color: #f62d14;
+  border-radius: 1px;
+}
+
+.pokemon-list-component::-webkit-scrollbar-thumb:hover {
 }
 
 .pokemon-component {
