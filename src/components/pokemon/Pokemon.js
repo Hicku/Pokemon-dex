@@ -1,13 +1,18 @@
 import React, { useContext } from "react";
 import "./pokemon.css";
 
-export default function Pokemon({ pokemonData }) {
+export default function Pokemon({ pokemonData, onHandleAddPokemon }) {
+  const handleAddClick = (e) => {
+    e.preventDefault();
+    onHandleAddPokemon();
+  };
+
   console.log("Is dataz:", pokemonData);
   return (
     <div>
       <main>
         <div className="data-container">
-          <section className="image-container">
+          <section className="image-container" onClick={handleAddClick}>
             <img src={pokemonData?.sprites.front_default}></img>
           </section>
           <section className="info-container">

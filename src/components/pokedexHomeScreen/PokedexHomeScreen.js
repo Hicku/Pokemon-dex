@@ -13,6 +13,11 @@ export default function PokedexHomeScreen() {
   const [state, dispatch] = useReducer(pokemonReducer, INITIAL_STATE);
   // state for storing caught pokemon data
   const [pokemonData, setPokemonData] = useState();
+  const [pokemonListdata, setPokemonListData] = useState([]);
+
+  const handleAddPokemon = () => {
+    setPokemonListData([...pokemonListdata, pokemonData]);
+  };
 
   const handleSearchClick = (e) => {
     e.preventDefault();
@@ -61,11 +66,18 @@ export default function PokedexHomeScreen() {
       </form>
       <div className="list-data-container">
         <section className="pokemon-list-component">
-          <PokemonList />
+          <PokemonList pokemonListdata={pokemonListdata} />
         </section>
-        <section className="pokemon-component">
-          <Pokemon pokemonData={pokemonData} />
-        </section>
+        {pokemonData ? (
+          <section className="pokemon-component">
+            <Pokemon
+              pokemonData={pokemonData}
+              onHandleAddPokemon={handleAddPokemon}
+            />
+          </section>
+        ) : (
+          ""
+        )}
       </div>
     </main>
   );

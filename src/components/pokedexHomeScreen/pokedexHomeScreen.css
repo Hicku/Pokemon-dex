@@ -18,7 +18,8 @@
   border-radius: 5px;
   padding: 4px;
   background-color: #fbf7f5;
-  flex-grow: 1;
+  width: 150px;
+  margin-left: 25px;
 }
 
 .pokemon-component {
@@ -26,9 +27,8 @@
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-  border: 3px solid green;
 }
 
 .search-pokemon-form {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }

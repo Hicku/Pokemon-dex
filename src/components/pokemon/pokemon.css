@@ -13,12 +13,18 @@
 .image-container {
 }
 
+.image-container:hover {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #ccccff;
+}
+
 .name-container {
   background-color: #f62d14;
   color: #fbf7f5;
   font-size: 14px;
   text-align: center;
-  padding: 1px 4px;
+  padding: 1px 1px 2px;
   width: 120px;
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: black;
@@ -29,7 +35,7 @@
   background-color: #fbf7f5;
   font-size: small;
   text-align: center;
-  padding: 1px 1px 4px;
+  padding: 3px 1px 4px;
 }
 
 .weight-height-container {
@@ -39,10 +45,11 @@
   border: 2px solid #002147;
   border-radius: 5px;
   background-color: #fbf7f5;
-  width: 124px;
+  width: 123px;
   margin-top: 5px;
   margin-left: 30px;
   font-size: small;
+  box-shadow: inset 10px 0 0 #f62d14, inset -10px 0 0 #f62d14;
 }
 
 .weight-container {
