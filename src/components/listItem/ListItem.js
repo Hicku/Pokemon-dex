@@ -79,6 +79,10 @@ export default function ListItem({ pokemon }) {
       type: "dark",
       colour: "#C15EE9",
     },
+    {
+      type: "normal",
+      colour: "#EFF6E0",
+    },
   ];
 
   return (
@@ -87,7 +91,7 @@ export default function ListItem({ pokemon }) {
       style={{ backgroundColor: checkColourType(pokemon.types[0].type.name) }}
     >
       <div className="list-item-container">
-        <div>{formatGameindex(pokemon.game_indices[19].game_index)}</div>
+        <div>{formatGameindex(pokemon.game_indices[15].game_index)}</div>
         <div className="list-name-container">{pokemon.name}</div>
       </div>
     </main>
