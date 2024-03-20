@@ -37,7 +37,7 @@ export default function Pokedex() {
         <div
           className="screen"
           style={{
-            backgroundColor: isOn ? "#99FFFF" : "#4A575D",
+            backgroundColor: isOn ? "#E6E6FA" : "#4A575D",
             transition: "background-color 0.5s ease",
           }}
         >

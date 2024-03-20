@@ -1,0 +1,13 @@
+.main-item-container {
+  background-color: #fbf7f5;
+}
+
+.list-container {
+  display: flex;
+  border-radius: 5px;
+  margin-bottom: 4px;
+}
+
+.list-name-container {
+  margin-left: 4px;
+}

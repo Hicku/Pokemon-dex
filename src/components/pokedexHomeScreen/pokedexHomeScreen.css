@@ -2,25 +2,33 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 3px solid orangered;
   flex-grow: 1;
   height: 210px;
   margin: 10px;
 }
 
 .list-data-container {
-  border: 3px solid yellowgreen;
   width: 100%;
   display: flex;
   flex-grow: 1;
 }
 
 .pokemon-list-component {
-  border: 3px solid red;
+  border: 2px solid #002147;
+  border-radius: 5px;
+  padding: 4px;
+  background-color: #fbf7f5;
   flex-grow: 1;
 }
 
 .pokemon-component {
-  border: 3px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-grow: 1;
+  border: 3px solid green;
+}
+
+.search-pokemon-form {
+  margin-bottom: 5px;
 }
