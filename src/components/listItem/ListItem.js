@@ -15,6 +15,7 @@ export default function ListItem({ pokemon }) {
     }
   };
 
+  // check current pokemon colour and check against backgroundColour object to apply background colour
   const checkColourType = (pokeType) => {
     for (let i = 0; i < backgrounColours.length; i++) {
       if (pokeType === backgrounColours[i].type) {

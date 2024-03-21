@@ -27,6 +27,7 @@ export default function PokedexHomeScreen() {
     }
   };
 
+  // Handle fetching search data click
   const handleSearchClick = (e) => {
     e.preventDefault();
     handleFetch();
@@ -70,7 +71,9 @@ export default function PokedexHomeScreen() {
           value={pokemonSearch}
           onChange={(e) => setPokemonSearch(e.target.value)}
         />
-        <button onClick={handleSearchClick}>search</button>
+        <button className="search-button" onClick={handleSearchClick}>
+          search
+        </button>
       </form>
       <div className="list-data-container">
         <section className="pokemon-list-component">

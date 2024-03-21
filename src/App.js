@@ -14,6 +14,7 @@ import Signup from "./Pages/Signup";
 export const AppContext = createContext();
 
 function App() {
+  // Convert first letter to uppercase
   const convertText = (text) => {
     let updatedText = "";
     for (let i = 0; i < text.length; i++) {

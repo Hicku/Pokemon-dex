@@ -32,8 +32,8 @@ export default function Pokedex() {
   };
 
   return (
-    <main className="pokemon-list-container">
-      <section className="list-section">
+    <main className="pokedex">
+      <section className="pokedex-white">
         <div
           className="screen"
           style={{
