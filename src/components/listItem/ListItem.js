@@ -9,7 +9,7 @@ export default function ListItem({ pokemon }) {
     } else if (num > 10 && num < 100) {
       return `0${num}`;
     } else {
-      return { num };
+      return `${num}`;
     }
   };
 
@@ -29,7 +29,7 @@ export default function ListItem({ pokemon }) {
     },
     {
       type: "grass",
-      colour: "#FFB149",
+      colour: "#82C23A",
     },
     {
       type: "electric",
@@ -91,7 +91,7 @@ export default function ListItem({ pokemon }) {
       style={{ backgroundColor: checkColourType(pokemon.types[0].type.name) }}
     >
       <div className="list-item-container">
-        <div>{formatGameindex(pokemon.game_indices[15].game_index)}</div>
+        <div>{formatGameindex(pokemon.id)}</div>
         <div className="list-name-container">{pokemon.name}</div>
       </div>
     </main>

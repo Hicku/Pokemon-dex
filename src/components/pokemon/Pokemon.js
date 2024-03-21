@@ -4,7 +4,8 @@ import "./pokemon.css";
 export default function Pokemon({ pokemonData, onHandleAddPokemon }) {
   const handleAddClick = (e) => {
     e.preventDefault();
-    onHandleAddPokemon();
+    const pokeId = pokemonData.id;
+    onHandleAddPokemon(pokeId);
   };
 
   console.log("Is dataz:", pokemonData);

@@ -12,11 +12,19 @@ export default function PokedexHomeScreen() {
   //reducer - updates state for handelFetch status
   const [state, dispatch] = useReducer(pokemonReducer, INITIAL_STATE);
   // state for storing caught pokemon data
-  const [pokemonData, setPokemonData] = useState();
+  const [pokemonData, setPokemonData] = useState(null);
   const [pokemonListdata, setPokemonListData] = useState([]);
 
-  const handleAddPokemon = () => {
-    setPokemonListData([...pokemonListdata, pokemonData]);
+  const handleAddPokemon = (id) => {
+    // Check if pokemonListData already includes the id
+    if (
+      !pokemonListdata.some(
+        (pokemon) => pokemon.game_indices[15].game_index === id
+      )
+    ) {
+      // If not, add it to pokemonListData
+      setPokemonListData([...pokemonListdata, pokemonData]);
+    }
   };
 
   const handleSearchClick = (e) => {
@@ -46,7 +54,6 @@ export default function PokedexHomeScreen() {
       const data = await res.json();
       // dispatch calls action type to update initial state with payload(data)
       dispatch({ type: "FETCH_SUCCESS", payload: data });
-      setPokemonData();
       setPokemonData(data);
     } catch (err) {
       dispatch({ type: "FETCH_ERROR", payload: err.message });
@@ -54,6 +61,7 @@ export default function PokedexHomeScreen() {
     }
   };
 
+  console.log(pokemonData);
   return (
     <main className="homescreen-container">
       <form className="search-pokemon-form">
