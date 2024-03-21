@@ -1,19 +1,34 @@
-import { useReducer, createContext, useState } from "react";
+import { createContext } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Navabar from "./components/navbar/Navabar";
-import Button from "./components/Button";
 import Homepage from "./Pages/Homepage";
 import Dex from "./Pages/dex/Dex";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
+<style>
+  @import
+  url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap')
+</style>;
 
 export const AppContext = createContext();
 
 function App() {
+  const convertText = (text) => {
+    let updatedText = "";
+    for (let i = 0; i < text.length; i++) {
+      if (i === 0) {
+        updatedText += text[i].toUpperCase();
+      } else {
+        updatedText += text[i];
+      }
+    }
+    return updatedText;
+  };
+
   return (
     <Router>
-      <AppContext.Provider>
+      <AppContext.Provider value={{ convertText: convertText }}>
         <div className="App">
           <header>
             <Navabar />

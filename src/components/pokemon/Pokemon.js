@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 import "./pokemon.css";
+import { AppContext } from "../../App";
 
 export default function Pokemon({ pokemonData, onHandleAddPokemon }) {
+  const context = useContext(AppContext);
+
   const handleAddClick = (e) => {
     e.preventDefault();
     const pokeId = pokemonData.id;
@@ -19,21 +22,21 @@ export default function Pokemon({ pokemonData, onHandleAddPokemon }) {
           <section className="info-container">
             <div className="name-type-container">
               <div className="name-container">
-                <h3>{pokemonData?.name}</h3>
+                <h3>{context.convertText(pokemonData?.name)}</h3>
               </div>
               <div className="type-container">
                 {pokemonData?.types
-                  .map((curType) => curType.type.name)
+                  .map((curType) => context.convertText(curType.type.name))
                   .join("/")}
               </div>
             </div>
             <div className="weight-height-container">
               <div>
                 <div className="weight-container">
-                  weight: {pokemonData?.weight}
+                  Weight: {pokemonData?.weight}
                 </div>
                 <div className="height-container">
-                  height: {pokemonData?.height}
+                  Height: {pokemonData?.height}
                 </div>
               </div>
             </div>

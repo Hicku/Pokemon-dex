@@ -29,6 +29,8 @@
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: black;
   letter-spacing: 0.6px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9em;
 }
 
 .type-container {
@@ -36,6 +38,8 @@
   font-size: small;
   text-align: center;
   padding: 3px 1px 4px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.7em;
 }
 
 .weight-height-container {
@@ -55,9 +59,13 @@
 .weight-container {
   border-bottom: 1.7px dotted #002147;
   padding: 2px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9em;
 }
 
 .height-container {
   padding: 2px;
   text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9em;
 }

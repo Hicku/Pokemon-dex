@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./listItem.css";
+import { AppContext } from "../../App";
 
 export default function ListItem({ pokemon }) {
+  const context = useContext(AppContext);
   // format gameindex to pokemon number system
   const formatGameindex = (num) => {
     if (num < 10) {
@@ -91,8 +93,10 @@ export default function ListItem({ pokemon }) {
       style={{ backgroundColor: checkColourType(pokemon.types[0].type.name) }}
     >
       <div className="list-item-container">
-        <div>{formatGameindex(pokemon.id)}</div>
-        <div className="list-name-container">{pokemon.name}</div>
+        <div className="id-container">{formatGameindex(pokemon.id)}</div>
+        <div className="list-name-container">
+          {context.convertText(pokemon.name)}
+        </div>
       </div>
     </main>
   );

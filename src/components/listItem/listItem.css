@@ -11,4 +11,11 @@
 
 .list-name-container {
   padding-left: 4px;
+  font-size: 0.8em;
+  font-family: "Roboto", sans-serif;
+}
+
+.id-container {
+  font-size: 0.8em;
+  font-family: "Roboto", sans-serif;
 }
