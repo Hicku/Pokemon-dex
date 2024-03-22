@@ -1,17 +1,35 @@
-.name-type-container {
-  border: 2px solid #002147;
-  border-radius: 5px;
-  height: fit-content;
-  margin-left: 30px;
-}
-
 .image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: clamp(40px, 80%, 100px);
+  width: clamp(40px, 95%, 100px);
+  outline: 3px sloid blue;
+  margin-right: 20px;
+  margin-top: 15px;
 }
 
 .image-container:hover {
   cursor: pointer;
   border-radius: 5px;
-  background-color: #ccccff;
+}
+
+.image {
+  height: clamp(40px, 80%, 80px);
+  width: clamp(40px, 80%, 80px);
+}
+
+.info-container {
+  background-color: #f62d14;
+  height: clamp(40px, 80%, 300px);
+  width: clamp(40px, 70%, 200px);
+}
+
+.name-type-container {
+  border: 2px solid #002147;
+  border-radius: 5px;
+  width: 100%;
+  height: clamp(40px, 30%, 100px);
 }
 
 .name-container {
@@ -20,12 +38,12 @@
   font-size: 14px;
   text-align: center;
   padding: 1px 1px 2px;
-  width: 120px;
+  width: 100%;
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: black;
   letter-spacing: 0.6px;
   font-family: "Roboto", sans-serif;
-  font-size: 0.9em;
+  font-size: clamp(0.3rem, 70%, 0.8rem);
 }
 
 .type-container {
@@ -34,7 +52,8 @@
   text-align: center;
   padding: 3px 1px 4px;
   font-family: "Roboto", sans-serif;
-  font-size: 0.7em;
+  font-size: clamp(0.5rem, 70%, 0.6rem);
+  width: 100%;
 }
 
 .weight-height-container {
@@ -42,13 +61,12 @@
   flex-direction: column;
   align-items: center;
   border: 2px solid #002147;
+  width: 100%;
+  margin-top: 7px;
   border-radius: 5px;
   background-color: #fbf7f5;
-  flex-grow: 1;
-  margin-top: 5px;
-  margin-left: 30px;
   font-size: small;
-  box-shadow: inset 10px 0 0 #f62d14, inset -10px 0 0 #f62d14;
+  box-shadow: inset 6px 0 0 #f62d14, inset -6px 0 0 #f62d14;
 }
 
 .weight-container {
@@ -56,7 +74,7 @@
   border-bottom: 1.7px dotted #002147;
   padding: 2px;
   font-family: "Roboto", sans-serif;
-  font-size: 0.9em;
+  font-size: clamp(0.3rem, 70%, 0.6rem);
 }
 
 .height-container {
@@ -64,5 +82,12 @@
   padding: 2px;
   text-align: center;
   font-family: "Roboto", sans-serif;
-  font-size: 0.9em;
+  font-size: clamp(0.5rem, 70%, 0.6rem);
+}
+
+@media all and (max-width: 600px) {
+  .weight-container,
+  .height-container {
+    font-size: 8px;
+  }
 }

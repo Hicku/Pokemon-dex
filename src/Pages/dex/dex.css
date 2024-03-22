@@ -3,6 +3,12 @@
   justify-content: center;
   align-items: center;
   height: clamp(300px, 100%, 1000px);
-  width: clamp(500px, 100%, 1700px);
+  width: clamp(300px, 100%, 1700px);
   background-color: #b3a125;
+}
+
+@media all and (max-width: 700px) {
+  .list-component-container {
+    background-color: #ba0021;
+  }
 }
